@@ -9,7 +9,7 @@ User.delete_all
 puts "Database cleaned!"
 
 puts "Creating users..."
-User.create!(email: "amara@gmail.com", password: "password", name: "Amara", phone_number: 089123454)
+User.create!(email: "amara@gmail.com", password: "password", name: "Amara", phone_number: "089123454")
 puts "Users created!"
 
 puts "Creating shops..."
