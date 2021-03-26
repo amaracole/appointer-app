@@ -6,6 +6,7 @@ class CreateShops < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :availability
       t.string :phone_number
+      t.string :category
       t.integer :capacity
       t.integer :longitude
       t.integer :latitude

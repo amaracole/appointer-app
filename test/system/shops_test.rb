@@ -17,6 +17,7 @@ class ShopsTest < ApplicationSystemTestCase
     fill_in "Address", with: @shop.address
     fill_in "Availability", with: @shop.availability
     fill_in "Capacity", with: @shop.capacity
+    fill_in "Category", with: @shop.category
     fill_in "Description", with: @shop.description
     fill_in "Latitude", with: @shop.latitude
     fill_in "Longitude", with: @shop.longitude
@@ -35,6 +36,7 @@ class ShopsTest < ApplicationSystemTestCase
     fill_in "Address", with: @shop.address
     fill_in "Availability", with: @shop.availability
     fill_in "Capacity", with: @shop.capacity
+    fill_in "Category", with: @shop.category
     fill_in "Description", with: @shop.description
     fill_in "Latitude", with: @shop.latitude
     fill_in "Longitude", with: @shop.longitude

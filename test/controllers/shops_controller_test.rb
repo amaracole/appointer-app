@@ -17,7 +17,7 @@ class ShopsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create shop" do
     assert_difference('Shop.count') do
-      post shops_url, params: { shop: { address: @shop.address, availability: @shop.availability, capacity: @shop.capacity, description: @shop.description, latitude: @shop.latitude, longitude: @shop.longitude, name: @shop.name, phone_number: @shop.phone_number } }
+      post shops_url, params: { shop: { address: @shop.address, availability: @shop.availability, capacity: @shop.capacity, category: @shop.category, description: @shop.description, latitude: @shop.latitude, longitude: @shop.longitude, name: @shop.name, phone_number: @shop.phone_number } }
     end
 
     assert_redirected_to shop_url(Shop.last)
@@ -34,7 +34,7 @@ class ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update shop" do
-    patch shop_url(@shop), params: { shop: { address: @shop.address, availability: @shop.availability, capacity: @shop.capacity, description: @shop.description, latitude: @shop.latitude, longitude: @shop.longitude, name: @shop.name, phone_number: @shop.phone_number } }
+    patch shop_url(@shop), params: { shop: { address: @shop.address, availability: @shop.availability, capacity: @shop.capacity, category: @shop.category, description: @shop.description, latitude: @shop.latitude, longitude: @shop.longitude, name: @shop.name, phone_number: @shop.phone_number } }
     assert_redirected_to shop_url(@shop)
   end
 
