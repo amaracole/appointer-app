@@ -1,8 +1,8 @@
 
 <div class="container m-5">
 
-  <div >
-    <h2>Shops</h2>
+  <div class="m-5">
+    <h2>Explore all shops</h2>
   </div>
 
   <% @shops.each do |shop| %>
@@ -20,6 +20,6 @@
     <% end %>
   <% end %>
 
-  <%= link_to 'New Shop', new_shop_path, class:"btn btn-outline-success" %>
+  <%= link_to 'New Shop', new_shop_path, class:"btn btn-outline-warning" %>
 
 </div>

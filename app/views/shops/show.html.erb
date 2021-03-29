@@ -35,15 +35,6 @@
   <%= @shop.capacity %>
 </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @shop.longitude %>
-</p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @shop.latitude %>
-</p>
-
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %>
+<%= link_to 'Edit', edit_shop_path(@shop), class: "btn btn-outline-warning" %> |
+<%= link_to 'Back', shops_path, class: "btn btn-outline-warning" %>
