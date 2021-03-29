@@ -1,39 +1,25 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Shops</h1>
+<div class="container m-5">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Description</th>
-      <th>Availability</th>
-      <th>Phone number</th>
-      <th>Category</th>
-      <th>Capacity</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div >
+    <h2>Shops</h2>
+  </div>
 
-  <tbody>
-    <% @shops.each do |shop| %>
-      <tr>
-        <td><%= shop.name %></td>
-        <td><%= shop.address %></td>
-        <td><%= shop.description %></td>
-        <td><%= shop.availability %></td>
-        <td><%= shop.phone_number %></td>
-        <td><%= shop.category %></td>
-        <td><%= shop.capacity %></td>
-        <td><%= link_to 'Show', shop %></td>
-        <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <% @shops.each do |shop| %>
+    <%= link_to shop_path(shop), class:"card-links" do %>
+    <div class="card-trip m-5">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <%#= cl_image_tag shop.photo.key %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= shop.name %></h2>
+          <p><%=  shop.description%> </p>
+        </div>
+      </div>
+    </div>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
 
-<br>
+  <%= link_to 'New Shop', new_shop_path, class:"btn btn-outline-success" %>
 
-<%= link_to 'New Shop', new_shop_path %>
+</div>
