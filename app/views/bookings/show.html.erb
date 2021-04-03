@@ -1,0 +1,13 @@
+<div class="container" style="padding-top: 7em; background-color: #fff"></div>
+  <div class="booking-container">
+    <div class="info-container">
+      <div class="booking-text text-center">
+        <h4><%= "Your 'click & meet' with #{@booking.shop.name} is confirmed" %> </h4>
+        <i class="fa fa-calendar"></i>
+          <%= @booking.date.strftime("%a %d %b") %>
+          <i class="fa fa-clock-o "></i>
+          <%= @booking.date.strftime("%H:%M") %>
+      </div>
+    </div>
+  </div>
+</div>

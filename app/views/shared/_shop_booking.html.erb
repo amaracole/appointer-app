@@ -2,7 +2,8 @@
   <h4>Book an appointment!</h4>
   <%# if policy(Booking).create? %>
     <%= simple_form_for([@shop, @booking]) do |f| %>
-      <%#= f.input :date, as: :string, input_html: {class: "datepicker"}, label: "Date and Time" %>
+      <%= f.input :date, as: :string, input_html: {class: "datepicker"}, label: "Date and Time" %>
+      <%= f.input :comment, label: "Comment" %>
       <%= f.submit class: "btn btn-warning", id: "submit" %>
     <% end %>
   <%# end %>

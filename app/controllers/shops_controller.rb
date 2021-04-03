@@ -3,16 +3,19 @@ class ShopsController < ApplicationController
 
   # GET /shops
   def index
-    @shops = Shop.all
+    @shops = policy_scope(Shop)
   end
 
   # GET /shops/1
   def show
+    @booking = Booking.new
+    authorize @booking
   end
 
   # GET /shops/new
   def new
     @shop = Shop.new
+    authorize @shop
   end
 
   # GET /shops/1/edit
@@ -22,6 +25,7 @@ class ShopsController < ApplicationController
   # POST /shops
   def create
     @shop = Shop.new(shop_params)
+    authorize @shop
 
     if @shop.save
       redirect_to @shop, notice: 'Shop was successfully created.'

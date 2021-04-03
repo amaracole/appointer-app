@@ -1,4 +1,4 @@
-class ShopPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -6,6 +6,10 @@ class ShopPolicy < ApplicationPolicy
   end
 
   def create?
+    true
+  end
+
+  def index?
     true
   end
 
@@ -17,12 +21,7 @@ class ShopPolicy < ApplicationPolicy
     record.user == user || user.admin
   end
 
-  def index?
-    true
-  end
-
   def show?
-    true
+    record.user == user || user.admin || user == record.shop.user
   end
-
 end
