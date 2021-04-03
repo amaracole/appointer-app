@@ -10,6 +10,7 @@ class ShopsController < ApplicationController
   def show
     @booking = Booking.new
     authorize @booking
+    @markers = [{ lat: @shop.latitude, lng: @shop.longitude}]
   end
 
   # GET /shops/new
@@ -20,6 +21,7 @@ class ShopsController < ApplicationController
 
   # GET /shops/1/edit
   def edit
+
   end
 
   # POST /shops
@@ -27,8 +29,8 @@ class ShopsController < ApplicationController
     @shop = Shop.new(shop_params)
     authorize @shop
 
-    if @shop.save
-      redirect_to @shop, notice: 'Shop was successfully created.'
+    if @shop.save!
+      redirect_to shop_path(@shop), notice: 'Shop was successfully created.'
     else
       render :new
     end
@@ -37,7 +39,7 @@ class ShopsController < ApplicationController
   # PATCH/PUT /shops/1
   def update
     if @shop.update(shop_params)
-      redirect_to @shop, notice: 'Shop was successfully updated.'
+      redirect_to shop_path(@shop), notice: 'Shop was successfully updated.'
     else
       render :edit
     end

@@ -20,6 +20,7 @@
     <% end %>
   <% end %>
 
-  <%= link_to 'New Shop', new_shop_path, class:"btn btn-outline-warning" %>
-
+  <% if policy(Shop).create? %>
+    <%= link_to 'New Shop', new_shop_path, class:"btn btn-outline-warning" %>
+  <% end %>
 </div>
