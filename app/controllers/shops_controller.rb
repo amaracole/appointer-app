@@ -17,6 +17,13 @@ class ShopsController < ApplicationController
   def new
     @shop = Shop.new
     authorize @shop
+
+    @markers = @shops.geocoded.map do |shop|
+      {
+        lat: shop.latitude,
+        lng: shop.longitude
+      }
+    end
   end
 
   # GET /shops/1/edit
