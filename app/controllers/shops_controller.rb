@@ -4,6 +4,15 @@ class ShopsController < ApplicationController
   # GET /shops
   def index
     @shops = policy_scope(Shop)
+
+    @markers = @shops.geocoded.map do |shop|
+    {
+      lat: shop.latitude,
+      lng: shop.longitude,
+      # infoWindow: render_to_string(partial: "info_window", locals: { shop: shop })
+      # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+    }
+    end
   end
 
   # GET /shops/1
@@ -17,13 +26,6 @@ class ShopsController < ApplicationController
   def new
     @shop = Shop.new
     authorize @shop
-
-    @markers = @shops.geocoded.map do |shop|
-      {
-        lat: shop.latitude,
-        lng: shop.longitude
-      }
-    end
   end
 
   # GET /shops/1/edit
