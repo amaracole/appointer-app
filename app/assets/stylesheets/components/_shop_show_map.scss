@@ -1,29 +1,11 @@
-.mapboxgl-popup {
-  max-width: 200px;
-}
-
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-}
-
-.map-index {
-  position: sticky !important;
-  top: 0;
-  height: 100vh;
-  width: 50%;
-  margin-left: 4em;
-  margin-top: -5em;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
 .map-show {
-  width: 100%;
-  height: 480px;
+  width: 50%;
+  // height: 480px;
 }
 
 
 .shop-show-map {
-  width: 50%;
+  width: 100%;
   padding-bottom: 7em;
 }
 

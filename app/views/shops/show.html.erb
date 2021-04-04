@@ -53,7 +53,10 @@
   </div>
 
 
-  <%= link_to 'Edit', edit_shop_path(@shop), class: "btn btn-outline-warning" %>
+    <!-- <% if policy(@shop).edit? %>
+      <%= link_to 'Edit', edit_shop_path(@shop), class: "btn btn-outline-warning" %>
+    <% end %> -->
+
   <%= link_to 'Back', shops_path, class: "btn btn-outline-warning" %>
 
 </div>
