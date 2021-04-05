@@ -2,8 +2,8 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :destroy, :update]
 
   def index
-
-    @bookings = current_user.bookings
+    @bookings = policy_scope(Booking)
+    # authorize @bookings
   end
 
   def show

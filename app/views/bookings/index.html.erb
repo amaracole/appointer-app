@@ -1,6 +1,16 @@
 My appointments
 
+<!-- if booking.nil? display "You currently have no appointments, book your first click and meet" -->
+
 <% @bookings.each do |booking| %>
-  <%= booking.shop.name %>
+  <h3> <%= booking.shop.name %> </h3>
+  <p>
+    <i class="fa fa-calendar"></i>
+    <%= booking.date.strftime("%a %d %b") %>
+  </p>
+  <p>
+    <i class="fa fa-clock "></i>
+    <%= booking.date.strftime("%H:%M") %>
+  </p>
 
 <% end %>

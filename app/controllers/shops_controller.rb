@@ -47,7 +47,7 @@ class ShopsController < ApplicationController
 
   # PATCH/PUT /shops/1
   def update
-    if @shop.update(shop_params)
+    if @shop.update!(shop_params)
       redirect_to shop_path(@shop), notice: 'Shop was successfully updated.'
     else
       render :edit
@@ -65,6 +65,7 @@ class ShopsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_shop
     @shop = Shop.find(params[:id])
+    authorize @shop
   end
 
   # Only allow a trusted parameter "white list" through.

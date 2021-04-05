@@ -1,3 +1,8 @@
+
+<%=
+  image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.latitude},#{@shop.longitude}&markers=#{@shop.latitude},#{@shop.longitude}&zoom=7&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+  class: 'img-fluid img-rounded' , alt: "#{@shop.name} on the map" %>
+
 <div class="container" style="margin-top: 5em; margin-bottom: 5em">
 
   <div class="card-product">
@@ -42,20 +47,20 @@
 
   <div class="map-and-form d-flex">
     <div class="d-flex">
-      <div class="space-show-map">
-
-        <%= render "shared/shop_map" %>
-      </div>
       <div class="booking-form mb-5 <%= "d-none" if @shop.user == current_user  %>">
         <%= render "shared/shop_booking" %>
+      </div>
+
+      <div class="shop-show-map">
+        <%= render "shared/shop_map" %>
       </div>
     </div>
   </div>
 
 
-    <!-- <% if policy(@shop).edit? %>
+    <% if policy(@shop).edit? %>
       <%= link_to 'Edit', edit_shop_path(@shop), class: "btn btn-outline-warning" %>
-    <% end %> -->
+    <% end %>
 
   <%= link_to 'Back', shops_path, class: "btn btn-outline-warning" %>
 
