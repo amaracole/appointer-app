@@ -1,7 +1,14 @@
 <div class="container" style="margin-top: 5em; margin-bottom: 5em">
 
   <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+
+    <% if @shop.photo.attached? %>
+      <%= cl_image_tag @shop.photo.key %>
+    <% else %>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <% end %>
+
+
     <div class="card-product-infos">
 
       <h3>
