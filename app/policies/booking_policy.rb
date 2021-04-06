@@ -10,7 +10,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def index?
-    true
+    record.user == user || user.admin || user == record.shop.user
   end
 
   def update?
@@ -22,6 +22,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user || user.admin || user == record.shop.user
+    user == record.user || user.admin
   end
 end
+

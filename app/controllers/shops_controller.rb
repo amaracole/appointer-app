@@ -19,7 +19,7 @@ class ShopsController < ApplicationController
   # GET /shops/1
   def show
     @booking = Booking.new
-    authorize @booking
+
     @markers = [{ lat: @shop.latitude, lng: @shop.longitude}]
   end
 

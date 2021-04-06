@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @markers = [{ lat: @booking.shop.latitude, lng: @booking.shop.longitude}]
   end
 
   def create
@@ -20,7 +21,6 @@ class BookingsController < ApplicationController
       render "shops/show"
     end
   end
-
 
   def update
     @booking.update(booking_params)
