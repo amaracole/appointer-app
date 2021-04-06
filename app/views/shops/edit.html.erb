@@ -1,6 +1,17 @@
-<h1>Editing Shop</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+      <div class="form-login">
 
-<%= render 'form', shop: @shop %>
+        <h2> <%= "Editing #{@shop.name}" %></h2>
 
-<%= link_to 'Show', @shop %> |
-<%= link_to 'Back', shops_path %>
+        <%= render 'form', shop: @shop %>
+
+        <%= link_to 'Show', @shop %> |
+        <%= link_to 'Back', shops_path %>
+
+      </div>
+    </div>
+  </div>
+</div>
+

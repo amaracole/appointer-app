@@ -1,10 +1,10 @@
-<div class="container" style="padding-top: 7em">
-  <div class="booking-container">
+<div class="container" style="padding-bottom: 7em">
+  <div class="booking-container" style="padding-top: 7em">
     <div class="info-container">
-      <div class="booking-text text-center">
+      <div class="booking-text text-center" style="padding-bottom: 2em">
         <h4><%= "Your 'click & meet' with #{@booking.shop.name} is confirmed" %> </h4>
         <p>
-          <i class="fa fa-calendar"></i>
+          <i class="fa fa-calendar-alt"></i>
           <%= @booking.date.strftime("%a %d %b") %>
         </p>
         <p>
@@ -12,10 +12,15 @@
           <%= @booking.date.strftime("%H:%M") %>
         </p>
         <p>
-          Do not forget to come with an FFP2 mask and please follow the hygiene concept. <br>
-          Stay safe!
+          Do not forget to bring an FFP2 mask and please follow the hygiene concept. <br>
+          Stay safe and see you soon!
         </p>
       </div>
     </div>
+  </div>
+
+  <div class="text-center">
+    <%= link_to 'Explore more shops' , shops_path, class: "btn btn-warning" %>
+    <%= link_to 'My Appointments' , bookings_path, class: "btn btn-warning" %>
   </div>
 </div>
