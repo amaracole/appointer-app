@@ -9,7 +9,8 @@ class ShopsController < ApplicationController
     {
       lat: shop.latitude,
       lng: shop.longitude,
-      # infoWindow: render_to_string(partial: "info_window", locals: { shop: shop })
+      infoWindow: render_to_string(partial: "map_info_window", locals: { shop: shop }),
+      id: shop.id
       # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
     }
     end
