@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to shops_path(@shop), notice: "Booking deleted!"
+    redirect_to bookings_path, notice: "Booking deleted!"
   end
 
   private

@@ -4,13 +4,19 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
+    <%= f.input :name, label: "Shop name" %>
     <%= f.input :address %>
-    <%= f.input :description %>
-    <%= f.input :availability %>
+    <%= f.input :description, label: "Please provide a short description"%>
+    <%= f.input :availability, label: "Opening times" %>
     <%= f.input :phone_number %>
     <%= f.input :category %>
-    <%= f.input :capacity %>
+    <%= f.input :capacity, label: "How many people can fit in your shop?" %>
+    <label class="btn btn-outline-warning mb-3" id="photo-submit">
+      Add a photo!
+      <span style="display:none;">
+        <%= f.input :photo, as: :file %>
+      </span>
+    </label>
   </div>
 
   <div class="form-actions">

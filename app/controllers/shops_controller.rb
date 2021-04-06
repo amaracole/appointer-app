@@ -38,7 +38,7 @@ class ShopsController < ApplicationController
   def create
     @shop = Shop.new(shop_params)
     authorize @shop
-
+    @shop.user = current_user
     if @shop.save!
       redirect_to shop_path(@shop), notice: 'Shop was successfully created.'
     else
@@ -48,6 +48,7 @@ class ShopsController < ApplicationController
 
   # PATCH/PUT /shops/1
   def update
+    @shop.user = current_user
     if @shop.update!(shop_params)
       redirect_to shop_path(@shop), notice: 'Shop was successfully updated.'
     else

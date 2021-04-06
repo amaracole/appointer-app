@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :shops, through: :bookings
+  has_one_attached :photo
 end
