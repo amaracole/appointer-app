@@ -27,7 +27,7 @@
 }
 
 .card-trip > img {
-  height: 75vh;
+  height: 65vh;
   width: 100%;
   object-fit: cover;
 }
@@ -46,8 +46,20 @@
 
 
 .card-trip .card-trip-infos {
+  // margin: 20px 0 20px 0;
   padding: 16px;
-  margin: 10px 0 20px 0
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  background-color: #E67E25;
+}
+
+.card-trip-infos .card-trip-logo {
+  position: absolute;
+  right: 16px;
+  top: 0px;
+  width: 120px;
 }
 
 .card-links {
