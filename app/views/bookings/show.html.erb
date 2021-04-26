@@ -17,6 +17,11 @@
         </p>
       </div>
     </div>
+    <% if policy(@booking).update? %>
+      <%= link_to edit_booking_path(@booking), class: "btn btn-outline-warning" do %>
+        Edit <i class="fa fa-edit"></i>
+      <% end %>
+    <% end %>
 
     <div class="booking-map-container" style="border-radius: 10px">
       <%= render "shared/shop_map" %>

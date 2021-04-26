@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+      <div class="form-login">
+
+        <h2>
+          <%= "Edit your booking" %>
+        </h2>
+
+        <%= render 'shared/shop_booking' , booking: @booking %>
+
+          <%= link_to 'Show' , @booking %> |
+          <%= link_to 'Back' , bookings_path %>
+
+      </div>
+    </div>
+  </div>
+</div>

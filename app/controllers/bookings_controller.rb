@@ -1,8 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy, :update]
+  before_action :set_booking, only: [:show, :edit, :destroy, :update]
 
   def index
     @bookings = policy_scope(Booking)
+  end
+
+  def edit
+
   end
 
   def show
@@ -23,8 +27,13 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
-    redirect_to booking_path(@booking), notice: "Booking updated!"
+
+    @booking.user = current_user
+    if @booking.update!(booking_params)
+      redirect_to booking_path(@booking), notice: 'booking was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
