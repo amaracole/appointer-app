@@ -10,7 +10,7 @@ class ShopPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user || user.admin
+    record.user == user
   end
 
   def destroy?
