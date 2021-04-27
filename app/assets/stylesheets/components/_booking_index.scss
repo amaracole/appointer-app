@@ -1,0 +1,50 @@
+
+.card-category {
+  // background-size: cover;
+  // background-position: center;
+  // height: 300px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // color: white;
+  // font-size: 24px;
+  // font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 20px;
+}
+
+.card-category img{
+  height: 35vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.booking-info {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  // position: relative;
+  // background-color: #E67E25;
+
+}
+
+.booking-info h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.booking-info p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.booking-info .delete-edit-action {
+  // position: absolute;
+  // right: 0px;
+  // top: 0px;
+  width: 33%;
+}

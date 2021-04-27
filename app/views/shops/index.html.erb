@@ -1,33 +1,35 @@
 <div class="container m-5">
 
-  <div class="m-5">
+  <div class="m-3">
     <h2>Explore all shops</h2>
   </div>
 
-  <% @shops.each do |shop| %>
-    <%= link_to shop_path(shop), class:"card-links" do %>
-    <div class="card-trip m-5">
+  <div class="cards" style="margin-bottom: 3em">
+    <% @shops.each do |shop| %>
+      <%= link_to shop_path(shop), class:"card-links" do %>
 
+      <div class="card-category">
         <% if shop.photo.attached? %>
-          <%= cl_image_tag shop.photo.key %>
+          <%= cl_image_tag shop.photo.key, :style => "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))" %>
         <% else %>
-          <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" />
+          <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"
+          style ="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"/>
         <% end %>
 
-
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= shop.name %></h2>
-          <p><%=  shop.address%> </p>
-        </div>
-        <div>
-          <!-- shop.logo -->
-          <img src="https://res.cloudinary.com/db0g0iarz/image/upload/v1617795678/Appointer/zara_logo_tu0o5d.jpg" class="card-trip-logo avatar-large" />
+        <div class="shop-info">
+          <div>
+            <h2><%= shop.name %></h2>
+            <p><%=  shop.address%> </p>
+          </div>
+          <!-- <div>
+            shop.logo
+            <img src="https://res.cloudinary.com/db0g0iarz/image/upload/v1617795678/Appointer/zara_logo_tu0o5d.jpg" class="card-trip-logo avatar-large" />
+          </div> -->
         </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 
   <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
