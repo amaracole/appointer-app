@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 3em; margin-bottom: 3em">
-  <h3 class="text-center"> My appointments </h3>
+  <h3 class="text-center"> My Appointments </h3>
   <div class="cards" style="margin-bottom: 3em">
 
       <% if current_user.bookings.present? %>
@@ -16,13 +16,13 @@
                 <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80"
                 style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))"/>
               <% end %>
-
-
             <div class="booking-info">
               <div>
                 <h2>
                   <%= booking.shop.name %>
                 </h2>
+                <p>Appointment booked for:</p>
+
                 <p>
                   <i class="fa fa-calendar"></i>
                   <%= booking.date.strftime("%a %d %b") %>
@@ -37,7 +37,7 @@
               <div class="delete-edit-action">
                 <% if policy(booking).update? %>
                   <%= link_to edit_booking_path(booking) do %>
-                        <i class="fa fa-edit btn btn-outline-warning"></i>
+                    <i class="fa fa-edit btn btn-outline-warning"></i>
                   <% end %>
                 <% end %>
 
@@ -49,7 +49,6 @@
                   <% end %>
                 <% end %>
               </div>
-
             </div>
           </div>
           <% end %>
@@ -57,7 +56,7 @@
 
       <% else %>
         <div class="text-center">
-        <p>You currently have no appointments, book your first click and meet!</p>
+          <p>You currently have no appointments, book your first click and meet!</p>
         </div>
       <% end %>
     </div>
@@ -65,6 +64,6 @@
 
 
   <div class="text-center">
-    <%= link_to 'Explore', shops_path, class: "btn btn-warning" %>
+    <%= link_to 'Explore nearby shops', shops_path, class: "btn btn-outline-warning" %>
   </div>
 </div>
