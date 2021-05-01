@@ -11,12 +11,19 @@
     <%= f.input :phone_number %>
     <%= f.input :category %>
     <%= f.input :capacity, label: "How many people can fit in your shop?" %>
-    <label class="btn btn-outline-warning mb-3" id="photo-submit">
-      Add a photo!
+    <%= f.input :photo, input_html: { class: 'd-none' , id: 'photo-input' }, label_html: { class: 'upload-photo' },
+      label: '📷 Upload a photo' %>
+    <div class="mb-3">
+      <%= image_tag "" , width: 300, class: "hidden", id: "photo-preview" %>
+    </div>
+
+    <!-- <%= image_tag "" , width: 300, class: "hidden", id: "photo-preview" %>
+    <label class="upload-photo" id="photo-input">
+      📷 Upload a photo!
       <span style="display:none;">
         <%= f.input :photo, as: :file %>
       </span>
-    </label>
+    </label> -->
   </div>
 
   <div class="form-actions">

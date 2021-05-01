@@ -30,6 +30,8 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initMapbox } from "../plugins/init_mapbox";
+import { previewImageOnFileSelect } from "../components/photo_preview";
+
 
 
 
@@ -38,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initFlatpickr();
   initMapbox();
+  previewImageOnFileSelect();
 });
