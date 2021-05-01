@@ -1,6 +1,5 @@
 import mapboxgl from "mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
-
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
@@ -55,14 +54,12 @@ const openInfoWindow = (markers) => {
 
 const toggleCardHighlighting = (event) => {
   // We select the card corresponding to the marker's id
-  const card = document.querySelector(`[data-shop-id="${event.currentTarget.dataset.markerId}"]`);
+  const card = document.querySelector(`[data-flat-id="${event.currentTarget.dataset.markerId}"]`);
   // Then we toggle the class "highlight github" to the card
   card.classList.toggle('highlight');
 }
 
 export { initMapbox };
-
-
 
 
 
