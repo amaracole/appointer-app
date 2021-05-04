@@ -3,7 +3,7 @@
 </div> -->
 
 <div class="cards-and-map">
-  <div class="shop-cards" style="margin-bottom: 3em">
+  <div class="shop-cards">
     <% @shops.each do |shop| %>
       <%= link_to shop_path(shop), class:"card-links" do %>
 
@@ -26,18 +26,18 @@
     <% end %>
   </div>
 
-  <div class="shop-index-map mb-5">
+  <div class="shop-index-map">
     <%= render "shared/shop_map" %>
     <!-- <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div> -->
   </div>
 
-  <div class="m-3">
+  <!-- <div class="m-3">
     <% if policy(Shop).create? %>
     <%= link_to 'Add your shop', new_shop_path, class:"btn btn-warning" %>
     <% end %>
-  </div>
+  </div> -->
 
 </div>
 
