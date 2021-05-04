@@ -16,17 +16,18 @@
           Stay safe and see you soon!
         </p>
       </div>
+      <div class="booking-map-container mb-5">
+        <%= render "shared/shop_map" %>
+      </div>
     </div>
     <% if policy(@booking).update? %>
       <%= link_to edit_booking_path(@booking), class: "btn btn-outline-warning" do %>
         Edit Appointment <i class="fa fa-edit"></i>
       <% end %>
     <% end %>
-
-    <div class="booking-map-container" style="border-radius: 10px">
-      <%= render "shared/shop_map" %>
-    </div>
   </div>
+
+
 
   <div class="text-center">
     <%= link_to 'Explore more shops' , shops_path, class: "btn btn-warning" %>
