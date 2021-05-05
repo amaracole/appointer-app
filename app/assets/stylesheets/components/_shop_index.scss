@@ -1,46 +1,30 @@
-// .wrapper {
-//   display: flex;
-//   justify-content: end;
-
-
-// }
-
-.card-category {
-  // background-size: cover;
-  // background-position: center;
-  // height: 180px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // color: white;
-  // font-size: 24px;
-  // font-weight: bold;
+.shop-card-category {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // margin: 20px;
+  margin: 20px;
 }
 
-.card-category  > img {
+.shop-card-category  > img {
   height: 25vh;
   width: 100%;
   object-fit: cover;
 }
 
-.card-category  h2 {
+.shop-card-category  h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-category  p {
+.shop-card-category  p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
 
-.card-category  .shop-info {
+.shop-card-category  .shop-info {
   // margin: 20px 0 20px 0;
   padding: 16px;
   display: flex;
@@ -49,32 +33,34 @@
   // position: relative;
   background-color: #E67E25;
 }
-.cards-and-map{
-  display: flex;
-  justify-content: space-between;
-  // align-items: center;
-  flex-flow: row wrap;
-}
+// .cards-and-map{
+//   display: flex;
+//   justify-content: space-between;
+//   // align-items: center;
+//   flex-flow: row wrap;
+// }
 
 .cards-and-map .shop-cards {
-  width: 75%;
+  // width: 75%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 }
 
 .shop-index-map {
-  width: 25%;
+  // width: 25%;
   // padding: 4em;
   // margin: 16px 0 0 16px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
+  position: sticky;
+  top: 0;
+  z-index:1;
 }
 
 .shop-index-map .map-show {
   width: 100%;
-  height: 100vh;
+  height: 35vh;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   // border-radius: 15px;
-  position: sticky;
-  top: 0;
+  // position: sticky;
+  // top: 0;
 }

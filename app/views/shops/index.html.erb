@@ -1,13 +1,19 @@
 <!-- <div class="m-3">
   <h2>Explore all shops</h2>
 </div> -->
+<div class="shop-index-map">
+  <%= render "shared/shop_map" %>
+    <!-- <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div> -->
+</div>
 
 <div class="cards-and-map">
   <div class="shop-cards">
     <% @shops.each do |shop| %>
       <%= link_to shop_path(shop), class:"card-links" do %>
 
-        <div class="card card-category" data-shop-id="<%= shop.id %>">
+        <div class="card shop-card-category" data-shop-id="<%= shop.id %>">
           <% if shop.photo.attached? %>
             <%= cl_image_tag shop.photo.key, :style => "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))" %>
           <% else %>
@@ -26,12 +32,7 @@
     <% end %>
   </div>
 
-  <div class="shop-index-map">
-    <%= render "shared/shop_map" %>
-    <!-- <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div> -->
-  </div>
+
 
   <!-- <div class="m-3">
     <% if policy(Shop).create? %>
