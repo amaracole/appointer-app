@@ -16,16 +16,21 @@
   width: 100%;
   background: transparent;
   box-shadow: none;
+
   .nav-link {
     background-color: white;
-    color: white;
     font-weight: bold;
     border-radius: 50%;
   }
-  .navbar-brand {
+  .navbar-brand img {
+    width: 60px;
+    border:#E67E24;
+    border-style: solid;
 
-    img {
-       width: 60px;
-    }
+  }
+  .navbar-nav .avatar {
+    width: 60px;
+    border: #E67E24;
+    border-style: solid;
   }
 }
